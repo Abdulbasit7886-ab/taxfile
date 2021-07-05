@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function addelement() {
+            var x = parseInt(document.getElementById('1').value);
+            var y=0;
+            if (x < 100000) {
+                alert("No Tax Apply")
+            }
+            else if (x >= 100000 && x <= 200000) {
+                y = x / 100 * 5
+            }
+            else if (x > 200000) {
+                y = x / 100 * 10
+            }
+            var monthly_income = x;
+
+            var salary_after_tax;
+            salary_after_tax = x - y;
+
+            var yearly_income;
+            yearly_income = x * 12
+
+            var yearly_tax;
+            yearly_tax = y * 12;
+
+            var yearly_income_tax;
+            yearly_income_tax = yearlyincome - yearly_tax;
+
+            document.getElementById('monthly_income').innerHTML = monthly_income;
+            document.getElementById('salary_after_tax').innerHTML = salary_after_tax;
+            document.getElementById('yearly_income').innerHTML = yearly_income;
+            document.getElementById('yearly_tax').innerHTML = yearly_tax;
+            document.getElementById('yearly_income_tax').innerHTML = yearly_income_tax;
+
+
+        }
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <h1> FIND TAX </h1>
+    <label for="1">enter your income</label><br>
+    <input type="number" id="1" name="1"><br><br>
+    <button onclick="addelement()">Calculate</button>
+
+    <p>monthly income:</p>
+    <p id="monthly_income"></p>
+    <p>monthly tax:</p>
+    <p id=monthly_tax></p>
+    <p>salary after tax:</p>
+    <p id="salary_after_tax"></p>
+    <p>yearly tax:</p>
+    <p id="yearly_tax"></p>
+    <p>yearly income after tax:</p>
+    <p id="yearly_income_tax"></p>
+</body>
+
+</html>
